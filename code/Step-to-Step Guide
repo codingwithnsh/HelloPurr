@@ -1,0 +1,72 @@
+# Hello Purr Enhanced
+
+This project recreates a fun, interactive app using **MIT App Inventor**. The app allows users to:
+- Play a meowing sound and vibrate the device when the button is clicked.
+- Play a secondary sound when the device is shaken.
+
+## Features
+- **Pet the Cat Button**: Triggers a meowing sound and vibration when clicked.
+- **Shake Interaction**: Plays a fun sound when the device is shaken using the accelerometer sensor.
+- **Beginner-Friendly**: Perfect for learning how to use images, buttons, sounds, and sensors in app development.
+
+---
+
+## Step-by-Step Guide
+
+### 1. Setting Up the Project
+1. Open [MIT App Inventor](https://appinventor.mit.edu/).
+2. Create a new project. Name it `HelloPurrEnhanced`.
+
+---
+
+### 2. Designing the User Interface
+1. **Add Components**:
+   - **Image**:
+     - Drag an **Image** component onto the screen.
+     - Upload a cat image (e.g., a cute kitten).
+   - **Button**:
+     - Drag a **Button** component below the cat image.
+     - Set its **Text** property to `Pet the cute Cat`.
+     - Customize the button's background and text colors.
+   - **Accelerometer Sensor**:
+     - Drag an **AccelerometerSensor** component to the screen (non-visible).
+
+2. **Customizing Layout**:
+   - Center-align all components.
+   - Adjust the size of the image and button for better visuals.
+
+---
+
+### 3. Adding Sounds
+1. **Add Sound Components**:
+   - Drag two **Sound** components to the screen (non-visible).
+   - Upload sound files:
+     - `Sound1`: Cat meow sound.
+     - `Sound2`: Fun effect for shaking.
+
+---
+
+### 4. Programming with Blocks
+Switch to the **Blocks Editor** and add the following logic:
+
+1. **Button Click Event**:
+   - Add a `when Button1.Click` block.
+   - Inside it, add:
+     - `call Sound1.Play`: Plays the cat meow.
+     - `call Sound1.Vibrate`: Vibrates the device for 500 milliseconds.
+
+2. **Shake Event**:
+   - Add a `when AccelerometerSensor1.Shaking` block.
+   - Inside it, add:
+     - `call Sound2.Play`: Plays a fun sound when the device is shaken.
+
+---
+
+## Example Code Blocks
+```plaintext
+When Button1.Click
+    Call Sound1.Play
+    Call Sound1.Vibrate (500 ms)
+
+When AccelerometerSensor1.Shaking
+    Call Sound2.Play
